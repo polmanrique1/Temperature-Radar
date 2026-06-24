@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  temperature-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: temperature-monitor
+    volumes:
+      - ./data:/app/data
+      - ./temperature.c:/app/temperature.c:ro
+    working_dir: /app
+    command: ./temperature
+    restart: unless-stopped
+    environment:
+      - TZ=UTC

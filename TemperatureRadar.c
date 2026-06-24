@@ -75,7 +75,7 @@ int main(){
     fprintf(file,"Day %d : \n" , day);
 
     int i= 0;
-    while (i <= 4)
+    while (i <= 24)
     {
         Temperature temp = generateTemperature(0, 45);
         
